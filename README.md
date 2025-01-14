@@ -30,12 +30,12 @@ In case copying is suspected, the School Direction will be informed as per [the 
 > [!TIP]
 > Fill in this section in your copy of this repository.
 
-Group number: `todo`
+Group number: `33`
 
 ## Members
-- Member 1 email: `todo`
-- Member 2 email: `todo`
-- Member 3 email: `todo`
+- Member 1 email: `marc.delosaires01@estudiant.upf.edu`
+- Member 2 email: `jordi.esteve01@estudiant.upf.edu`
+- Member 3 email: `albert.jane01@estudiant.upf.edu`
 
 # Additional resources
 
