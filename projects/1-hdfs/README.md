@@ -30,13 +30,23 @@ Remember you must format your code with black and follow PEP8 conventions.
 
 **[1 mark] What is the difference between a server and a service?**
 
+A server is a physical or virtual machine that hosts resources, while a service is a specific software function or capability provided by the server to users or other systems.
+
 **[1 mark] What is the difference between horizontal and vertical scaling?**
+
+Horizontal scaling involves adding more servers to distribute the load, while vertical scaling means upgrading the resources (CPU, RAM) of an existing server.
 
 **[1 mark] What does availability mean?**
 
+Availability refers to the proportion of time a system or service is operational and accessible to users.
+
 **[1 mark] What does durability mean?**
 
+Durability ensures that once data is written to a system, it remains intact and retrievable even in the event of failures.
+
 **[1 mark] To improve the availability of a service, would you recommend vertical or horizontal scaling?**
+
+Horizontal scaling is recommended, as it reduces the impact of a single point of failure and distributes the load across multiple servers.
 
 ---
 
@@ -47,23 +57,44 @@ Remember you must format your code with black and follow PEP8 conventions.
 
 **[1 mark] What are files divided into?**
 
+Files in HDFS are divided into blocks.
+
 **[1 mark] Are all blocks the same size?**
+
+Yes, all blocks in HDFS are typically the same size, with a default size of 128 MB or 64 MB, depending on the configuration.
 
 **[1 mark] How many instances of the `namenode` can run in HDFS?**
 
+HDFS supports one active namenode and optionally one or more standby namenodes for high availability.
+
+
 **[1 mark] Does the `namenode` scale horizontally or vertically? How does it impact availability?**
+
+The namenode scales vertically, which limits scalability and creates a single point of failure, impacting availability unless high availability (HA) configurations are used.
 
 **[1 mark] How many instances of the `datanode` can run in HDFS?**
 
+There can be multiple instances of datanodes running in HDFS, depending on the cluster size.
+
 **[1 mark] Does the `datanode` scale horizontally or vertically? How does it impact availability?**
+
+The datanode scales horizontally, which improves both scalability and availability by distributing data across multiple nodes.
 
 **[1 mark] Take a look at [Uploading files](#uploading-files). What is the main difference when writing a file to SSHDFS when compared to HDFS in relation to replication?**
 
+In SSHDFS, replication is not automatic, whereas in HDFS, files are automatically replicated to multiple datanodes to ensure redundancy.
+
 **[1 mark] How is the image constructed from the journal (WAL) and checkpoint?**
+
+The image is constructed by applying the changes from the journal (WAL) to the most recent checkpoint to recreate the current state of the filesystem.
 
 **[1 mark] Take a look at [namenode](#namenode-filesystem). Does SSHDFS have a journal? What is the main problem with this approach?**
 
+No, SSHDFS does not have a journal, which makes it prone to data loss or inconsistencies in case of a failure or crash.
+
 **[1 mark] How does the replication factor impact durability?**
+
+A higher replication factor improves durability by ensuring that multiple copies of the data exist on different nodes, reducing the risk of data loss.
 
 ---
 
@@ -74,13 +105,24 @@ Remember you must format your code with black and follow PEP8 conventions.
 
 **[1 mark] What is the difference between TCP and UDP?**
 
+TCP is a connection-oriented protocol that ensures reliable data transfer with error-checking, while UDP is connectionless, faster, but does not guarantee data delivery.
+
+
 **[1 mark] What is HTTP? Is HTTP based on TCP or UDP?**
+
+HTTP (HyperText Transfer Protocol) is a protocol used for transferring web content. It is based on TCP for reliable data transmission.
 
 **[1 mark] What is an API?**
 
+An API (Application Programming Interface) is a set of rules and protocols that allow different software applications to communicate and interact with each other.
+
 **[1 mark] Watch [RESTful APIs in 100 Seconds](https://www.youtube.com/watch?v=-MTSQjw5DrM) and/or [What is a REST API?](https://www.youtube.com/watch?v=-mN3VyJuCjM). What is an HTTP API? What is an HTTP REST API?**
 
+An HTTP API is an API that uses HTTP protocols for communication. An HTTP REST API is a specific type of HTTP API that follows REST (Representational State Transfer) principles, emphasizing stateless communication and the use of standard HTTP methods.
+
 **[1 mark] What 4 verbs does an HTTP API use for representing the actions of reading, updating, deleting and creating?**
+
+The 4 verbs are: GET (read), PUT (update), DELETE (delete), and POST (create).
 
 ---
 
@@ -91,13 +133,23 @@ Remember you must format your code with black and follow PEP8 conventions.
 
 **[1 mark] Watch [Docker in 100 Seconds](https://www.youtube.com/watch?v=Gjnup-PuquQ). What is a Dockerfile?**
 
+ A Dockerfile is a script containing instructions to build a Docker image. It defines the application environment, dependencies, and commands for setup.
+
 **[1 mark] What is a Docker image?**
+
+ A Docker image is a template with everything needed to run an application, including the code, libraries, and dependencies. It is used to create Docker containers.
 
 **[1 mark] What is a Docker container?**
 
+ A Docker container is a lightweight, portable runtime instance of a Docker image. It runs applications in isolated environments.
+
 **[1 mark] What is Docker compose?**
 
+ Docker Compose is a tool to define and manage multi-container applications. It uses a single YAML file to configure all the services.
+
 **[1 mark] What is a Docker compose file?**
+
+ A Docker Compose file is a YAML file that specifies the configuration for a multi-container application. It defines services, networks, and volumes needed to run the application.
 
 ---
 
