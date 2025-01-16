@@ -201,9 +201,14 @@ Inside the folder [projects\1-hdfs\testserver2](./testserver2/), follow the [Fas
 
 **[2 mark] Paste a screenshot where you test the API of your service running in Docker using `curl`.**
 
+![image](https://github.com/user-attachments/assets/e33900f8-c84e-4fd8-ba94-bc4e883b3b07)
+
+
 Go back to [projects\1-hdfs\testserver1](./testserver1/). Adapt it so it runs in Docker.
 
 **[3 mark] Paste a screenshot where you test the `sum` endpoint of your API running in Docker using `curl`.**
+
+![image](https://github.com/user-attachments/assets/9682e39f-5e76-4fc7-9908-96cdcbe3061d)
 
 ---
 
