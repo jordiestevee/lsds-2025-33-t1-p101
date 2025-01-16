@@ -1,0 +1,10 @@
+
+version: '3'
+services:
+  namenode:
+    build: .
+    ports:
+      - "8000:80"  # Maps container port 80 to host port 8000
+    volumes:
+      - ./files.json:/app/files.json  # Mount files.json for persistence
+      - ./config.json:/app/config.json  # Mount config.json for configuration
