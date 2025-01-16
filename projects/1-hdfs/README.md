@@ -158,8 +158,12 @@ The 4 verbs are: GET (read), PUT (update), DELETE (delete), and POST (create).
 Inside the folder [projects\1-hdfs\testserver1](./testserver1/), follow the [Fastapi quickstart](https://fastapi.tiangolo.com/#installation) tutorial to build a service with an HTTP API.
 
 **[1 mark] Paste a screenshot where you do a GET request to your service using the browser. Open `http://127.0.0.1:8000/items/512?q=lsds25`.**.
+![image](https://github.com/user-attachments/assets/be846e19-19ea-45ae-adc6-8120bb7c3d39)
+
 
 **[1 mark] Paste a screenshot where you do the same GET request to your service but using `curl` in the terminal. Run `curl -X GET http://127.0.0.1:8000/items/835?q=lsds25`.**
+
+![image](https://github.com/user-attachments/assets/f3a63a77-b1f0-4225-84da-632d2ebe64cb)
 
 **[2 marks] Implement a new endpoint of your API: `POST /sum`.** 
 
@@ -185,6 +189,9 @@ Response:
 ```
 
 **[1 mark] Paste a screenshot where you test the POST request to your service using `curl`. Run `curl -X POST http://127.0.0.1:8000/sum -H "Content-Type: application/json" -d '{"x":23, "y": 32}'` in the terminal**
+
+![image](https://github.com/user-attachments/assets/cc7755d6-b6e8-4fc9-83da-6617a3a50d6a)
+
 
 ---
 
