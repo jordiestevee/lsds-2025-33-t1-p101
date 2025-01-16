@@ -1,19 +1,19 @@
 {
     "datanodes": [
         {
-            "id": 1,
-            "name": "DataNode-1",
-            "ip": "192.168.1.101"
+            "host": "localhost",
+            "port": 8001
         },
         {
-            "id": 2,
-            "name": "DataNode-2",
-            "ip": "192.168.1.102"
+            "host": "localhost",
+            "port": 8002
         },
         {
-            "id": 3,
-            "name": "DataNode-3",
-            "ip": "192.168.1.103"
+            "host": "localhost",
+            "port": 8003
         }
-    ]
+    ],
+    "replication_factor": 2,
+    "block_size": 100
 }
+
