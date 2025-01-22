@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  namenode:
+    build:
+      context: ./namenode
+    ports:
+      - "8000:8000"
+  datanode:
+    build:
+      context: ./datanode
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./datanode/storage:/app/storage
