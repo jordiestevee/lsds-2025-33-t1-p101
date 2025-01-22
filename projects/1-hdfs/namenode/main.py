@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 
 app = FastAPI()
-
 # Paths to config.json and files.json
 CONFIG_PATH = Path(__file__).parent / "config.json"
 FILES_PATH = Path(__file__).parent / "files.json"
