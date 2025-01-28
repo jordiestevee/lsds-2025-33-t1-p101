@@ -347,6 +347,9 @@ Modify the `compose.yaml` file to also create 3 `datanodes` services at ports 80
 
 Test you can upload and download the cat image when the service runs in Docker. Paste a screenshot and verify the downloaded image is fine.
 
+![image](https://github.com/user-attachments/assets/51e9274f-60c8-4d65-a32e-94398b9e1cca)
+
+
 ---
 
 ## Seminar 2: Building a Python client
