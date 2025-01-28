@@ -322,6 +322,9 @@ Implement the [PUT /files/{filename}/blocks/{block_number}/content](#put-filesfi
 > You can use the [`open` and `write`](https://www.geeksforgeeks.org/python-write-bytes-to-file/) functions to write bytes to a new file. 
 
 Test you can upload a file as if it were a single block with curl: `curl -F "file=@./test_files/cat.jpg" -X PUT localhost:8001/files/cat.jpg/blocks/0/content`. Paste a screenshot of putting a block to the datanode with curl and how it is stored in the filesystem inside the container (using the `Files` tab in `Docker Desktop`).
+![image](https://github.com/user-attachments/assets/b3edd4e8-4dea-4343-8b48-d44b5c0ed824)
+
+![image](https://github.com/user-attachments/assets/78ae0b52-4b6d-4dfe-ad17-9fccc92ddc1d)
 
 ---
 
@@ -333,6 +336,8 @@ Implement the [GET /files/{filename}/blocks/{block_number}/content](#get-filesfi
 > You can [use the `FileResponse` object to return files](https://fastapi.tiangolo.com/advanced/custom-response/#fileresponse).
 
 Test you can download the cat image we uploaded before with curl: `curl -o downloaded-cat.jpg -X GET localhost:8001/files/cat.jpg/blocks/0/content`. Paste a screenshot and verify the downloaded image is fine.
+
+![image](https://github.com/user-attachments/assets/1381ba9e-f13d-477d-94f7-45aeb62113e5)
 
 ---
 
