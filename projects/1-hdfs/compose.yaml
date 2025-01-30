@@ -1,19 +1,18 @@
-version: '3'
+version: '3.8'
 services:
   namenode:
-    build: ./namenode # The relative path to the namenode directory
+    build: ./namenode
     ports:
-      - "8000:80" # Maps container port 80 to host port 8000
-    volumes:
-      - ./namenode/files.json:/app/files.json # Persist files.json for namenode
-      - ./namenode/config.json:/app/config.json # Persist config.json for namenode
-
+      - "8000:80"
   datanode1:
-    build: ./datanode # The relative path to the datanode directory
+    build: ./datanode
     ports:
-      - "8001:80" # Maps container port 80 to host port 8001
-    depends_on:
-      - namenode # Ensure namenode starts before datanode1
-    volumes:
-      - ./datanode/storage:/app/storage # Persist storage for datanode
-      - ./datanode/config.json:/app/config.json # Persist config.json for datanode
+      - "8001:8000"
+  datanode2:
+    build: ./datanode
+    ports:
+      - "8002:8000"
+  datanode3:
+    build: ./datanode
+    ports:
+      - "8003:8000"
