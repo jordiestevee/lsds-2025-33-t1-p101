@@ -8,6 +8,13 @@ app = FastAPI()
 CONFIG_PATH = Path(__file__).parent / "config.json"
 FILES_PATH = Path(__file__).parent / "files.json"
 
+@app.get("/datanodes")
+def get_datanodes():
+    """
+    Returns the list of datanodes from config.json.
+    """
+    return {"datanodes": config["datanodes"]}
+
 # Load config.json at startup
 with open(CONFIG_PATH, "r", encoding="utf-8") as f:
     config = json.load(f)
