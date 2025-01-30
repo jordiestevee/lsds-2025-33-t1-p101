@@ -255,6 +255,7 @@ When a new file is created, you must return the number of blocks and the datanod
 
 Test it works with curl and paste a screenshot. Verify the new file is also stored to `files.json` and paste a screenshot.
 
+![image](https://github.com/user-attachments/assets/ae8a5f0d-5b8a-492b-9013-e5986eca8d2c)
 
 ---
 
@@ -267,6 +268,11 @@ Implement the [GET /files/{filename}](#get-filesfilename) endpoint.
 Test it works with curl and paste a screenshot.
 
 Make sure you return a 404 if the file is not found in `files.json`.
+
+![image](https://github.com/user-attachments/assets/8d2cbae9-2ccd-4c16-a45c-d238f7cccca2)
+![image](https://github.com/user-attachments/assets/1ed59a32-7060-4202-8cbd-fdff0e2b9d13)
+
+
 
 ---
 
@@ -287,7 +293,11 @@ Start the service: `docker compose up`.
 
 Test you can create a file and get a file with curl and paste a screenshot.
 
+![image](https://github.com/user-attachments/assets/a083fa58-7868-47ef-a5c9-c8509e6ac9a7)
+
+
 Also, paste a screenshot of the content of the `files.json` file using the `Files` tab in `Docker Desktop` to explore the files inside the container.
+![image](https://github.com/user-attachments/assets/2d6ada1d-b03f-4f85-bc46-de7c3d0c32d2)
 
 ---
 
