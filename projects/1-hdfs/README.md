@@ -235,6 +235,7 @@ Then, implement the first endpoint of the `namenode` API: [GET /datanodes](#get-
 
 Test it works with curl and paste a screenshot.
 
+![image](https://github.com/user-attachments/assets/1d5264a3-1abe-47f1-bdb8-44ff1999bffd)
 
 ---
 
@@ -253,6 +254,7 @@ When a new file is created, you must return the number of blocks and the datanod
 - [Write](https://python.land/data-processing/working-with-json#How_to_write_JSON_to_a_file_in_python) the [metadata of the new file to `files.json`](#namenode-filesystem) whenever a new file is created. 
 
 Test it works with curl and paste a screenshot. Verify the new file is also stored to `files.json` and paste a screenshot.
+
 
 ---
 
