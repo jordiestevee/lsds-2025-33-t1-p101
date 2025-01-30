@@ -293,11 +293,13 @@ Start the service: `docker compose up`.
 
 Test you can create a file and get a file with curl and paste a screenshot.
 
-![image](https://github.com/user-attachments/assets/a083fa58-7868-47ef-a5c9-c8509e6ac9a7)
+![image](https://github.com/user-attachments/assets/3a941a2e-0441-4887-912e-9ec8364127b1)
+
 
 
 Also, paste a screenshot of the content of the `files.json` file using the `Files` tab in `Docker Desktop` to explore the files inside the container.
-![image](https://github.com/user-attachments/assets/2d6ada1d-b03f-4f85-bc46-de7c3d0c32d2)
+![image](https://github.com/user-attachments/assets/ae8aa819-7920-47b4-b2b6-7d6f6f551828)
+
 
 ---
 
