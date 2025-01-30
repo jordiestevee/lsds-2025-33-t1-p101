@@ -388,6 +388,9 @@ Create a new Python script `projects\1-hdfs\client\list_datanodes.py` that retri
 
 Run the `list_datanodes.py` script and paste a screenshot of the result.
 
+![image](https://github.com/user-attachments/assets/c4d49a9f-9169-40e6-b935-7be952483c5f)
+
+
 ---
 
 ### [S2Q1] [10 marks] Upload a file
