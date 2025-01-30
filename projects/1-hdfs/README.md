@@ -267,10 +267,16 @@ Implement the [GET /files/{filename}](#get-filesfilename) endpoint.
 
 Test it works with curl and paste a screenshot.
 
+![image](https://github.com/user-attachments/assets/94af413a-f5d8-4443-b085-f78a8e29bec1)
+
+
 Make sure you return a 404 if the file is not found in `files.json`.
 
-![image](https://github.com/user-attachments/assets/8d2cbae9-2ccd-4c16-a45c-d238f7cccca2)
-![image](https://github.com/user-attachments/assets/1ed59a32-7060-4202-8cbd-fdff0e2b9d13)
+![image](https://github.com/user-attachments/assets/a52e1cb0-e906-47e8-ac1c-9f631afff2cf)
+
+
+
+
 
 
 
