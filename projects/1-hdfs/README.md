@@ -235,6 +235,7 @@ Then, implement the first endpoint of the `namenode` API: [GET /datanodes](#get-
 
 Test it works with curl and paste a screenshot.
 
+
 ---
 
 ### [L1Q1] [15 marks] POST /files
