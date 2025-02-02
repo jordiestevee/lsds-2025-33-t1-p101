@@ -60,11 +60,16 @@ with open(file_path, "rb") as file:
         # Upload the block to each datanode
         for replica in replicas:
             datanode_url = f"http://{replica['host']}:{replica['port']}"
-            upload_url = f"{datanode_url}/files/{filename}/blocks/{block_number}/content"
+            upload_url = (
+                f"{datanode_url}/files/{filename}/blocks/{block_number}/content"
+            )
             try:
                 response = requests.put(upload_url, files={"file": block_data})
                 response.raise_for_status()
-                print(f"Block {block_number} uploaded to {replica['host']}:{replica['port']}")
+                print(
+                    f"Block {block_number} uploaded to {replica['host']}:{replica['port']}"
+                )
             except requests.exceptions.RequestException as e:
-                print(f"Failed to upload block {block_number} to {replica['host']}:{replica['port']}: {e}")
-
+                print(
+                    f"Failed to upload block {block_number} to {replica['host']}:{replica['port']}: {e}"
+                )

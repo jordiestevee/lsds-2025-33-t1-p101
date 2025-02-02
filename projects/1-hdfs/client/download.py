@@ -27,14 +27,20 @@ with open(destination_path, "wb") as file:
         # Try downloading from each replica until successful
         for replica in replicas:
             datanode_url = f"http://{replica['host']}:{replica['port']}"
-            download_url = f"{datanode_url}/files/{filename}/blocks/{block_number}/content"
+            download_url = (
+                f"{datanode_url}/files/{filename}/blocks/{block_number}/content"
+            )
             try:
                 response = requests.get(download_url)
                 response.raise_for_status()
                 file.write(response.content)
-                print(f"Block {block_number} downloaded from {replica['host']}:{replica['port']}")
+                print(
+                    f"Block {block_number} downloaded from {replica['host']}:{replica['port']}"
+                )
                 break
             except requests.exceptions.RequestException as e:
-                print(f"Failed to download block {block_number} from {replica['host']}:{replica['port']}: {e}")
+                print(
+                    f"Failed to download block {block_number} from {replica['host']}:{replica['port']}: {e}"
+                )
         else:
             print(f"Failed to download block {block_number}")
