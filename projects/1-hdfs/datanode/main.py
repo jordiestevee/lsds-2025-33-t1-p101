@@ -10,6 +10,7 @@ DATA_DIR = "storage"
 # Ensure the storage directory exists
 os.makedirs(DATA_DIR, exist_ok=True)
 
+
 @app.put("/files/{filename}/blocks/{block_number}/content")
 async def upload_block(filename: str, block_number: int, file: UploadFile):
     # Create a directory for the file
@@ -24,10 +25,13 @@ async def upload_block(filename: str, block_number: int, file: UploadFile):
         with open(block_path, "wb") as f:
             content = await file.read()
             f.write(content)
-        return {"message": f"Block {block_number} of file {filename} stored successfully."}
+        return {
+            "message": f"Block {block_number} of file {filename} stored successfully."
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
+
+
 @app.get("/files/{filename}/blocks/{block_number}/content")
 async def get_block_content(filename: str, block_number: int):
     # Construct the file path based on the filename and block number

@@ -27,15 +27,21 @@ with open(destination_path, "wb") as file:
         # Try downloading from each datanode until successful
         for datanode in datanodes:
             datanode_url = f"http://{datanode['host']}:{datanode['port']}"
-            download_url = f"{datanode_url}/files/{filename}/blocks/{block_number}/content"
+            download_url = (
+                f"{datanode_url}/files/{filename}/blocks/{block_number}/content"
+            )
             try:
                 response = requests.get(download_url)
                 response.raise_for_status()
                 file.write(response.content)
-                print(f"Block {block_number} downloaded from {datanode['host']}:{datanode['port']}")
+                print(
+                    f"Block {block_number} downloaded from {datanode['host']}:{datanode['port']}"
+                )
                 break
             except requests.exceptions.RequestException as e:
-                print(f"Failed to download block {block_number} from {datanode['host']}:{datanode['port']}: {e}")
+                print(
+                    f"Failed to download block {block_number} from {datanode['host']}:{datanode['port']}: {e}"
+                )
         else:
             print(f"Failed to download block {block_number}")
 

@@ -8,6 +8,7 @@ app = FastAPI()
 CONFIG_PATH = Path(__file__).parent / "config.json"
 FILES_PATH = Path(__file__).parent / "files.json"
 
+
 @app.get("/datanodes")
 def get_datanodes():
     """
@@ -15,23 +16,28 @@ def get_datanodes():
     """
     return {"datanodes": config["datanodes"]}
 
+
 # Load config.json at startup
 with open(CONFIG_PATH, "r", encoding="utf-8") as f:
     config = json.load(f)
+
 
 # Helper functions to read/write files.json
 def read_files_json():
     with open(FILES_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
+
 def write_files_json(data):
     with open(FILES_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
+
 
 # Request body schema for file creation
 class CreateFileRequest(BaseModel):
     file_name: str
     size: int
+
 
 @app.post("/files")
 def create_file(req: CreateFileRequest):
@@ -62,11 +68,9 @@ def create_file(req: CreateFileRequest):
             replica_index = (datanode_index + r) % len(datanodes)
             replicas.append(datanodes[replica_index])
 
-        blocks_metadata.append({
-            "number": block_number,
-            "size": block_size_actual,
-            "replicas": replicas
-        })
+        blocks_metadata.append(
+            {"number": block_number, "size": block_size_actual, "replicas": replicas}
+        )
 
     # 4. Read existing files.json
     files_data = read_files_json()
@@ -79,7 +83,7 @@ def create_file(req: CreateFileRequest):
     file_metadata = {
         "file_name": file_name,
         "size": file_size,
-        "blocks": blocks_metadata
+        "blocks": blocks_metadata,
     }
 
     # 6. Write to files.json
@@ -87,7 +91,8 @@ def create_file(req: CreateFileRequest):
     write_files_json(files_data)
 
     return file_metadata
-    
+
+
 @app.get("/files/{filename}")
 def get_file_metadata(filename: str):
     """
@@ -102,4 +107,3 @@ def get_file_metadata(filename: str):
 
     # Return the metadata for the requested file
     return files_data[filename]
-
