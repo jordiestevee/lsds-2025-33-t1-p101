@@ -419,6 +419,16 @@ Create a new Python script `projects\1-hdfs\client\upload.py` that asks the user
 
 Run the `upload.py` script and paste a screenshot of the result and how the blocks are stored in the different `datanodes` (inside Docker).
 
+![image](https://github.com/user-attachments/assets/46945cc1-9d57-4357-a53c-93a38266899e)
+
+
+![image](https://github.com/user-attachments/assets/cbc8bb63-8d1a-4326-ab74-95cb8e166767)
+
+
+![image](https://github.com/user-attachments/assets/615c0988-2a0a-4495-9cf3-16f0035c8dea)
+
+![image](https://github.com/user-attachments/assets/dfbcd2db-9e83-43ae-8f33-ecb3d8cce95f)
+
 ---
 
 ### [S2Q2] [10 marks] Download a file
@@ -439,6 +449,12 @@ Create a new Python script `projects\1-hdfs\client\download.py` that asks the us
 
 
 Run the `upload.py` and `download.py` scripts. Paste a screenshot of how you can upload and download files.
+
+![image](https://github.com/user-attachments/assets/d5b8232f-7ae7-4e58-808d-3264b98ea584)
+
+![image](https://github.com/user-attachments/assets/56e936ab-6239-4d34-867d-732bf9bdae70)
+
+![image](https://github.com/user-attachments/assets/714dd813-7c6e-4ce3-88ce-c845300667c0)
 
 ---
 
