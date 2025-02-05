@@ -104,6 +104,7 @@ Each of the two lines contains **one tweet**. The JSON data for each line corres
 
  **Transformation**: A transformation in Spark is an operation that creates a new RDD from an existing one. Transformations are lazy, meaning they are not executed 
  immediately but only when an action is triggered. Examples: map(), filter(), flatMap().
+ 
  **Action**: An action triggers the execution of transformations and returns a result to the driver or writes data to an external system. Examples: collect(), count(), 
  reduce().
 
