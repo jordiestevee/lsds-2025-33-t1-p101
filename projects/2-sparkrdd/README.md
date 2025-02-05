@@ -50,6 +50,9 @@ Remember you must format your code with black and follow PEP8 conventions.
 - Print the dictionary. Take a screenshot and add it to the README.
 - Push your changes.
 
+![image](https://github.com/user-attachments/assets/9209fa06-f52b-4313-b978-270f8d0c152c)
+
+
 ## Seminar 3: Using Spark RDDs
 
 > Before starting this section, read [RDD Programming Guide](https://spark.apache.org/docs/latest/rdd-programming-guide.html) and [Resilient Distributed Datasets](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf)
@@ -81,9 +84,6 @@ The file [numbers2.txt](./data/numbers2.txt) has many lines, each with many numb
 - Create a file `spark_sum3.py`
 - Implement and run a Spark job that computes the sum of all the even numbers.
 - Write the command you used to run it in the README and show a screenshot of the result.
-
-  ![image](https://github.com/user-attachments/assets/193474d4-a6b6-4e1f-acbf-a039363a100e)
-
 
 ### [S3Q3] [5 marks] Find how many people live in each city
 
