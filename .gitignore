@@ -3,3 +3,5 @@ venv
 # Ignore Eurovision JSON files
 projects/2-sparkrdd/data/Eurovision3.json
 projects/2-sparkrdd/data/Eurovision9.json
+projects/2-sparkrdd/data/Eurovision3\[1\].json
+projects/2-sparkrdd/data/Eurovision9\[1\].json
