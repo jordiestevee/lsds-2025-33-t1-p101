@@ -143,6 +143,9 @@ The file [people.txt](./data/people.txt) has many lines, each with `{NAME} {LANG
 - Create a file `spark_count_people.py`
 - Implement and run a Spark job that counts how many people live in each city.
 - Write the command you used to run it in the README and show a screenshot of the result.
+- The command is: docker-compose exec spark-master spark-submit --master spark://172.21.0.2:7077 /opt/bitnami/spark/app/spark_count_people.py /opt/bitnami/spark/app/data/people.txt
+  ![image](https://github.com/user-attachments/assets/d00963ce-a9dc-4179-98d9-89aa5b27ca36)
+
 
 ### [S3Q4] [5 marks] Count the bigrams
 
