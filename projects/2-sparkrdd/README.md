@@ -53,6 +53,17 @@ For example:
 ```
 
 - **[1 mark]** What field in the JSON object of a Tweet contains the number of followers?
+
+  The number of followers is contained in the **"followers_count"** field within the **"user"** object of the JSON.  
+
+For example:  
+```json
+"user": {
+  ...
+  "followers_count": 718
+}
+```  
+
 - Take a look at the first two lines: `cat Eurovision3.json -n | head -n 2`.
 - **[1 mark]** How many Tweets does each line contain?
 
