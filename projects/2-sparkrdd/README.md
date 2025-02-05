@@ -119,6 +119,9 @@ The file [numbers2.txt](./data/numbers2.txt) has many lines, each with many numb
 - Create a file `spark_sum2.py`
 - Implement and run a Spark job that computes the sum of all the numbers.
 - Write the command you used to run it in the README and show a screenshot of the result.
+- The result is 195, and the command is: docker-compose exec spark-master spark-submit --master spark://172.21.0.2:7077 /opt/bitnami/spark/app/spark_sum2.py /opt/bitnami/spark/app/data/numbers2.txt
+  ![image](https://github.com/user-attachments/assets/466c3052-a311-4145-8fba-80d5e7a861f0)
+
 
 ### [S3Q2] [5 marks] Sum the even numbers
 
