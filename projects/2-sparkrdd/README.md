@@ -101,7 +101,21 @@ Each of the two lines contains **one tweet**. The JSON data for each line corres
 ### [S3Q0] [10 marks] What is Spark RDD?
 
 - **[1 mark]** What is the difference between a transformation and an action?
+
+ **Transformation**: A transformation in Spark is an operation that creates a new RDD from an existing one. Transformations are lazy, meaning they are not executed 
+ immediately but only when an action is triggered. Examples: map(), filter(), flatMap().
+ 
+ **Action**: An action triggers the execution of transformations and returns a result to the driver or writes data to an external system. Examples: collect(), count(), 
+ reduce().
+
+  
 - **[1 mark]** What is the difference between a wide and a narrow dependency? What is a stage in Spark RDD?
+
+  **Narrow Dependency:** In a narrow dependency, each partition of the child RDD depends on at most one partition of the parent RDD. Example: map(), filter().
+  
+  **Wide Dependency:** In a wide dependency, a partition of the child RDD depends on multiple partitions of the parent RDD, often requiring a shuffle across nodes. 
+   Example: groupByKey(), reduceByKey().
+  
 - Start up a Spark cluster locally using Docker compose: `docker-compose up`.
 - **[1 mark]** How many Spark workers exist in your local cluster? Take a screenshot of Docker Desktop and add it to the README.
 - **[3 mark]** What is a lambda function in Python?
