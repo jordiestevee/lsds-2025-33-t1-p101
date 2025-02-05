@@ -1,16 +1,15 @@
 from pyspark import SparkContext, SparkConf
 import sys
 
-# Read command-line argument
 _, source = sys.argv
 
-# Initialize Spark Context
 conf = SparkConf().setAppName("spark-count-people")
 sc = SparkContext(conf=conf)
 
-# Read file and extract cities
 people_rdd = sc.textFile(source)
-cities_rdd = people_rdd.map(lambda line: line.split()[2])  # Extract city from each line
+
+# Extract city from each line
+cities_rdd = people_rdd.map(lambda line: line.split()[2])  
 
 # Count occurrences of each city
 city_counts = cities_rdd.map(lambda city: (city, 1)).reduceByKey(lambda a, b: a + b)
@@ -36,5 +35,4 @@ print(
 """
 )
 
-# Stop Spark Context
 sc.stop()

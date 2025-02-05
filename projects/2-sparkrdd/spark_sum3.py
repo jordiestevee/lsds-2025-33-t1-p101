@@ -1,27 +1,33 @@
-from pyspark import SparkContext
+from pyspark import SparkContext, SparkConf
+import sys
 
-def is_even(number):
-    return number % 2 == 0
+_, source = sys.argv
 
-def main():
-    # Initialize SparkContext
-    sc = SparkContext("local", "SumEvenNumbers")
+conf = SparkConf().setAppName("spark-sum-even-numbers")
+sc = SparkContext(conf=conf)
 
-    sc.setLogLevel("ERROR")
+numbers_rdd = sc.textFile(source)
 
-    # Read the file and split each line into numbers
-    lines = sc.textFile("data/numbers2.txt")
-    numbers = lines.flatMap(lambda line: [int(num) for num in line.split()])
+# Split each line into individual numbers, flatten the list, and convert to integers
+numbers_int_rdd = numbers_rdd.flatMap(lambda line: [int(num) for num in line.split()])
 
-    # Filter even numbers and compute their sum
-    even_numbers = numbers.filter(is_even)
-    sum_even = even_numbers.sum()
+# Filter even numbers
+even_numbers_rdd = numbers_int_rdd.filter(lambda x: x % 2 == 0)
 
-    # Print the result
-    print(f"The sum of all even numbers is: {sum_even}")
+# Compute the sum of even numbers
+result = even_numbers_rdd.sum()
 
-    # Stop the SparkContext
-    sc.stop()
+# Print the result
+print(
+    f"""
+------------------------------------------
+------------------------------------------
+------------------------------------------
+SUM OF EVEN NUMBERS = {result}
+------------------------------------------
+------------------------------------------
+------------------------------------------
+"""
+)
 
-if __name__ == "__main__":
-    main()
+sc.stop()

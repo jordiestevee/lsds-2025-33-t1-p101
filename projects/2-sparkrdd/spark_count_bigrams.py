@@ -1,28 +1,23 @@
-from pyspark import SparkContext
+from pyspark import SparkContext, SparkConf
+import sys
 
-def create_bigrams(line):
-    words = line.split()  # Split the line into words
-    bigrams = zip(words, words[1:])  # Create bigrams (pairs of consecutive words)
-    return bigrams
+_, source = sys.argv
 
-def main():
-    # Initialize SparkContext
-    sc = SparkContext("local", "Bigram Count")
+conf = SparkConf().setAppName("spark-count-bigrams")
+sc = SparkContext(conf=conf)
 
-    # Read the input file
-    lines = sc.textFile("data/cat.txt")
+# Read the file into an RDD
+lines_rdd = sc.textFile(source)
 
-    # Create bigrams and count them
-    bigrams = lines.flatMap(create_bigrams)  # Flatten the list of bigrams
-    bigram_counts = bigrams.map(lambda bigram: (bigram, 1)).reduceByKey(lambda a, b: a + b)  # Count bigrams
+# Split each line into words and generate bigrams
+bigrams_rdd = lines_rdd.flatMap(lambda line: [((line.split()[i], line.split()[i+1]), 1) for i in range(len(line.split()) - 1)])
 
-    # Collect and print the results
-    results = bigram_counts.collect()
-    for bigram, count in results:
-        print(f"{bigram}: {count}")
+# Count the occurrences of each bigram
+bigram_counts_rdd = bigrams_rdd.reduceByKey(lambda a, b: a + b)
 
-    # Stop the SparkContext
-    sc.stop()
+# Collect the results and print
+results = bigram_counts_rdd.collect()
+for bigram, count in results:
+    print(f"Bigram: {bigram}, Count: {count}")
 
-if __name__ == "__main__":
-    main()
+sc.stop()

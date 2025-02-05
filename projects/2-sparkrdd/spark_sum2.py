@@ -1,10 +1,8 @@
 from pyspark import SparkContext, SparkConf
 import sys
 
-# Read command-line argument
 _, source = sys.argv
 
-# Initialize Spark Context
 conf = SparkConf().setAppName("spark-sum2")
 sc = SparkContext(conf=conf)
 
@@ -26,5 +24,4 @@ SUM = {result}
 """
 )
 
-# Stop Spark Context
 sc.stop()
