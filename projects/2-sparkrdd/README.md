@@ -67,6 +67,8 @@ For example:
 - Take a look at the first two lines: `cat Eurovision3.json -n | head -n 2`.
 - **[1 mark]** How many Tweets does each line contain?
 
+Each of the two lines contains **one tweet**. The JSON data for each line corresponds to a single tweet.
+
 ### [L3Q1] [5 marks] Parsing JSON with Python
 
 - Create a file `tweet_parser.py`
@@ -131,6 +133,9 @@ The file [numbers2.txt](./data/numbers2.txt) has many lines, each with many numb
 - Implement and run a Spark job that computes the sum of all the even numbers.
 - Write the command you used to run it in the README and show a screenshot of the result.
 
+  ![image](https://github.com/user-attachments/assets/77a65166-1fec-432c-9e29-1eeaf67d1367)
+
+
 ### [S3Q3] [5 marks] Find how many people live in each city
 
 The file [people.txt](./data/people.txt) has many lines, each with `{NAME} {LANGUAGE} {CITY}`.
@@ -138,6 +143,9 @@ The file [people.txt](./data/people.txt) has many lines, each with `{NAME} {LANG
 - Create a file `spark_count_people.py`
 - Implement and run a Spark job that counts how many people live in each city.
 - Write the command you used to run it in the README and show a screenshot of the result.
+- The command is: docker-compose exec spark-master spark-submit --master spark://172.21.0.2:7077 /opt/bitnami/spark/app/spark_count_people.py /opt/bitnami/spark/app/data/people.txt
+  ![image](https://github.com/user-attachments/assets/d00963ce-a9dc-4179-98d9-89aa5b27ca36)
+
 
 ### [S3Q4] [5 marks] Count the bigrams
 
