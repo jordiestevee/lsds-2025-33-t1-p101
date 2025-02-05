@@ -22,6 +22,17 @@ Remember you must format your code with black and follow PEP8 conventions.
 - Follow the Developer Setup to download the needed data if you did not at the beginning of the course.
 - Take a look at the first Tweet: `cat Eurovision3.json -n | head -n 1 | jq`. [Help](https://unix.stackexchange.com/questions/288521/with-the-linux-cat-command-how-do-i-show-only-certain-lines-by-number#:~:text=cat%20%2Fvar%2Flog%2Fsyslog%20-n%20%7C%20head%20-n%2050%20%7C,-b10%20-a10%20will%20show%20lines%2040%20thru%2060.)
 - **[1 mark]** What field in the JSON object of a Tweet contains the user bio?
+
+  The user bio is contained in the **"description"** field within the **"user"** object of the JSON.  
+
+For example, in the first tweet:  
+```json
+"user": {
+  ...
+  "description": "no todo lo que brilla es oro, a veces es highlight ✨💜"
+}
+```
+
 - **[1 mark]** What field in the JSON object of a Tweet contains the language?
 - **[1 mark]** What field in the JSON object of a Tweet contains the text content?
 - **[1 mark]** What field in the JSON object of a Tweet contains the number of followers?
