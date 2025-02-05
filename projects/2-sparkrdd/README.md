@@ -67,6 +67,8 @@ For example:
 - Take a look at the first two lines: `cat Eurovision3.json -n | head -n 2`.
 - **[1 mark]** How many Tweets does each line contain?
 
+Each of the two lines contains **one tweet**. The JSON data for each line corresponds to a single tweet.
+
 ### [L3Q1] [5 marks] Parsing JSON with Python
 
 - Create a file `tweet_parser.py`
