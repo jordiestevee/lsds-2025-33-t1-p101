@@ -22,9 +22,48 @@ Remember you must format your code with black and follow PEP8 conventions.
 - Follow the Developer Setup to download the needed data if you did not at the beginning of the course.
 - Take a look at the first Tweet: `cat Eurovision3.json -n | head -n 1 | jq`. [Help](https://unix.stackexchange.com/questions/288521/with-the-linux-cat-command-how-do-i-show-only-certain-lines-by-number#:~:text=cat%20%2Fvar%2Flog%2Fsyslog%20-n%20%7C%20head%20-n%2050%20%7C,-b10%20-a10%20will%20show%20lines%2040%20thru%2060.)
 - **[1 mark]** What field in the JSON object of a Tweet contains the user bio?
+
+  The user bio is contained in the **"description"** field within the **"user"** object of the JSON.  
+
+For example, in the first tweet:  
+```json
+"user": {
+  ...
+  "description": "no todo lo que brilla es oro, a veces es highlight ✨💜"
+}
+```
+
 - **[1 mark]** What field in the JSON object of a Tweet contains the language?
+
+  The language of the tweet is contained in the **"lang"** field of the JSON object.  
+
+For example:  
+```json
+"lang": "es"
+```  
+This indicates that the tweet is in Spanish.
+
 - **[1 mark]** What field in the JSON object of a Tweet contains the text content?
+
+  The text content of the tweet is contained in the **"text"** field of the JSON object.  
+
+For example:  
+```json
+"text": "RT @carloscarmo98: -Manel, algo que decir sobre tu actuación en Eurovision?\n-Kikiriketediga https://t.co/yXGYtKmJoM"
+```
+
 - **[1 mark]** What field in the JSON object of a Tweet contains the number of followers?
+
+  The number of followers is contained in the **"followers_count"** field within the **"user"** object of the JSON.  
+
+For example:  
+```json
+"user": {
+  ...
+  "followers_count": 718
+}
+```  
+
 - Take a look at the first two lines: `cat Eurovision3.json -n | head -n 2`.
 - **[1 mark]** How many Tweets does each line contain?
 
@@ -68,6 +107,10 @@ Remember you must format your code with black and follow PEP8 conventions.
 - Check the local IP for the Spark Master service in the `spark-master-1` container logs. You should see a log similar to `Starting Spark master at spark://172.20.0.2:7077`.
 - Run the job with Spark: `docker-compose exec spark-master spark-submit --master spark://{IP_FRM_PREVIOUS_STEP}:7077 /opt/bitnami/spark/app/spark_sum.py /opt/bitnami/spark/app/data/numbers1.txt`
 - **[1 mark]** Take a close look at the logs. What was the result of your job?
+- The result is 55
+
+- ![image](https://github.com/user-attachments/assets/3486ed0c-f133-4dd1-9916-713f4c144ece)
+
 
 ### [S3Q1] [5 marks]  Sum the numbers
 
@@ -76,6 +119,9 @@ The file [numbers2.txt](./data/numbers2.txt) has many lines, each with many numb
 - Create a file `spark_sum2.py`
 - Implement and run a Spark job that computes the sum of all the numbers.
 - Write the command you used to run it in the README and show a screenshot of the result.
+- The result is 195, and the command is: docker-compose exec spark-master spark-submit --master spark://172.21.0.2:7077 /opt/bitnami/spark/app/spark_sum2.py /opt/bitnami/spark/app/data/numbers2.txt
+  ![image](https://github.com/user-attachments/assets/466c3052-a311-4145-8fba-80d5e7a861f0)
+
 
 ### [S3Q2] [5 marks] Sum the even numbers
 
