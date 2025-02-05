@@ -37,6 +37,9 @@ Remember you must format your code with black and follow PEP8 conventions.
 - Take a screenshot and add it to the README.
 - Push your changes.
 
+  ![image](https://github.com/user-attachments/assets/795e182c-03b6-4bc5-802f-9fb6298d70b5)
+
+
 ### [L3Q2] [5 marks] Counting Tweets by language
 
 - Create a file `simple_tweet_language_counter.py`
