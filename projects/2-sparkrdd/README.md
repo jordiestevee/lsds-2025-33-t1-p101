@@ -133,6 +133,9 @@ The file [numbers2.txt](./data/numbers2.txt) has many lines, each with many numb
 - Implement and run a Spark job that computes the sum of all the even numbers.
 - Write the command you used to run it in the README and show a screenshot of the result.
 
+  ![image](https://github.com/user-attachments/assets/77a65166-1fec-432c-9e29-1eeaf67d1367)
+
+
 ### [S3Q3] [5 marks] Find how many people live in each city
 
 The file [people.txt](./data/people.txt) has many lines, each with `{NAME} {LANGUAGE} {CITY}`.
