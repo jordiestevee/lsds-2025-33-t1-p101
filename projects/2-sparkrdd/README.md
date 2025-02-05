@@ -44,6 +44,14 @@ For example:
 This indicates that the tweet is in Spanish.
 
 - **[1 mark]** What field in the JSON object of a Tweet contains the text content?
+
+  The text content of the tweet is contained in the **"text"** field of the JSON object.  
+
+For example:  
+```json
+"text": "RT @carloscarmo98: -Manel, algo que decir sobre tu actuación en Eurovision?\n-Kikiriketediga https://t.co/yXGYtKmJoM"
+```
+
 - **[1 mark]** What field in the JSON object of a Tweet contains the number of followers?
 - Take a look at the first two lines: `cat Eurovision3.json -n | head -n 2`.
 - **[1 mark]** How many Tweets does each line contain?
