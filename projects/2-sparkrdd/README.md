@@ -146,8 +146,9 @@ The file [numbers2.txt](./data/numbers2.txt) has many lines, each with many numb
 - Create a file `spark_sum3.py`
 - Implement and run a Spark job that computes the sum of all the even numbers.
 - Write the command you used to run it in the README and show a screenshot of the result.
+- - The result is 100, and the command is: docker-compose exec spark-master spark-submit --master spark://172.19.0.2:7077 /opt/bitnami/spark/app/spark_sum3.py /opt/bitnami/spark/app/data/numbers2.txt
 
-  ![image](https://github.com/user-attachments/assets/77a65166-1fec-432c-9e29-1eeaf67d1367)
+  ![image](https://github.com/user-attachments/assets/9499e4bc-b449-46d3-81d0-2bcb7d984485)
 
 
 ### [S3Q3] [5 marks] Find how many people live in each city
@@ -168,6 +169,10 @@ The file [cat.txt](./data/cat.txt) has many lines, each with a sentence.
 - Create a file `spark_count_bigrams.py`
 - Implement and run a Spark job that counts how many people live in each city.
 - Write the command you used to run it in the README and show a screenshot of the result.
+- The command is:  docker-compose exec spark-master spark-submit --master spark://172.19.0.2:7077 /opt/bitnami/spark/app/spark_count_bigrams.py /opt/bitnami/spark/app/data/cat.txt
+
+  ![image](https://github.com/user-attachments/assets/4b928e2c-a0b2-4221-a192-9b85ada45dc6)
+
 
 ## Lab 4: Analyzing Tweets with Spark
 
