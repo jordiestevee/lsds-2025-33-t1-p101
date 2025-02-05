@@ -34,6 +34,15 @@ For example, in the first tweet:
 ```
 
 - **[1 mark]** What field in the JSON object of a Tweet contains the language?
+
+  The language of the tweet is contained in the **"lang"** field of the JSON object.  
+
+For example:  
+```json
+"lang": "es"
+```  
+This indicates that the tweet is in Spanish.
+
 - **[1 mark]** What field in the JSON object of a Tweet contains the text content?
 - **[1 mark]** What field in the JSON object of a Tweet contains the number of followers?
 - Take a look at the first two lines: `cat Eurovision3.json -n | head -n 2`.
