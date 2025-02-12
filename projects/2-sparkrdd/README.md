@@ -118,6 +118,9 @@ Each of the two lines contains **one tweet**. The JSON data for each line corres
   
 - Start up a Spark cluster locally using Docker compose: `docker-compose up`.
 - **[1 mark]** How many Spark workers exist in your local cluster? Take a screenshot of Docker Desktop and add it to the README.
+  
+  ![image](https://github.com/user-attachments/assets/49cc0232-c04b-4569-85b1-38b5d8d55098)
+
 - **[3 mark]** What is a lambda function in Python?
       A lambda function in Python is a small, anonymous function defined using the lambda keyword. It can take any number of arguments but can only have one expression.         The result of the expression is automatically returned.
 - **[3 mark]** What do the RDD operations `map`, `filter`, `groupByKey` and `flatMap` do?
