@@ -119,6 +119,7 @@ Each of the two lines contains **one tweet**. The JSON data for each line corres
 - Start up a Spark cluster locally using Docker compose: `docker-compose up`.
 - **[1 mark]** How many Spark workers exist in your local cluster? Take a screenshot of Docker Desktop and add it to the README.
 - **[3 mark]** What is a lambda function in Python?
+      A lambda function in Python is a small, anonymous function defined using the lambda keyword. It can take any number of arguments but can only have one expression.         The result of the expression is automatically returned.
 - **[3 mark]** What do the RDD operations `map`, `filter`, `groupByKey` and `flatMap` do?
 - Check the local IP for the Spark Master service in the `spark-master-1` container logs. You should see a log similar to `Starting Spark master at spark://172.20.0.2:7077`.
 - Run the job with Spark: `docker-compose exec spark-master spark-submit --master spark://{IP_FRM_PREVIOUS_STEP}:7077 /opt/bitnami/spark/app/spark_sum.py /opt/bitnami/spark/app/data/numbers1.txt`
