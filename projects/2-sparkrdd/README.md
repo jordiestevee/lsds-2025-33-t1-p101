@@ -121,9 +121,42 @@ Each of the two lines contains **one tweet**. The JSON data for each line corres
   
   ![image](https://github.com/user-attachments/assets/49cc0232-c04b-4569-85b1-38b5d8d55098)
 
+  As we can see, there exist 2 spark workers in out local cluster
+
 - **[3 mark]** What is a lambda function in Python?
+- 
       A lambda function in Python is a small, anonymous function defined using the lambda keyword. It can take any number of arguments but can only have one expression.         The result of the expression is automatically returned.
 - **[3 mark]** What do the RDD operations `map`, `filter`, `groupByKey` and `flatMap` do?
+  
+      1. map
+        Purpose: Applies a function to each element of the RDD and returns a new RDD of the results.
+
+        Input: A function that takes one element and returns one transformed element.
+
+        Output: A new RDD where each element is the result of applying the function.
+
+      2. filter
+        Purpose: Selects elements from the RDD that satisfy a condition (predicate).
+
+        Input: A function that takes one element and returns True or False.
+
+        Output: A new RDD containing only the elements that satisfy the condition.
+
+      3. groupByKey
+        Purpose: Groups the values for each key in a key-value pair RDD.
+
+        Input: An RDD of key-value pairs (K, V).
+
+        Output: An RDD of (K, Iterable<V>) pairs, where all values for the same key are grouped into an iterable.
+
+      4. flatMap
+        Purpose: Applies a function to each element of the RDD and flattens the result into a single list.
+
+        Input: A function that takes one element and returns an iterable (e.g., a list).
+
+        Output: A new RDD where each input element is expanded into zero or more output elements.
+
+  
 - Check the local IP for the Spark Master service in the `spark-master-1` container logs. You should see a log similar to `Starting Spark master at spark://172.20.0.2:7077`.
 - Run the job with Spark: `docker-compose exec spark-master spark-submit --master spark://{IP_FRM_PREVIOUS_STEP}:7077 /opt/bitnami/spark/app/spark_sum.py /opt/bitnami/spark/app/data/numbers1.txt`
 - **[1 mark]** Take a close look at the logs. What was the result of your job?
