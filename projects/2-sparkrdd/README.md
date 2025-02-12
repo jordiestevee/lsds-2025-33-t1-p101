@@ -121,11 +121,12 @@ Each of the two lines contains **one tweet**. The JSON data for each line corres
   
   ![image](https://github.com/user-attachments/assets/49cc0232-c04b-4569-85b1-38b5d8d55098)
 
-  As we can see, there exist 2 spark workers in out local cluster
+  As we can see, there exist 2 spark workers in our local cluster
 
 - **[3 mark]** What is a lambda function in Python?
-- 
+
       A lambda function in Python is a small, anonymous function defined using the lambda keyword. It can take any number of arguments but can only have one expression.         The result of the expression is automatically returned.
+  
 - **[3 mark]** What do the RDD operations `map`, `filter`, `groupByKey` and `flatMap` do?
   
       1. map
