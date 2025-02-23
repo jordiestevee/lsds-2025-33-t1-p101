@@ -318,6 +318,10 @@ AWS allows us to rent virtual servers and deploy a Spark cluster to do data anly
     
 - Paste a screenshot
 
+![image](https://github.com/user-attachments/assets/31caa60c-9c7d-4262-87b3-7fa3a9f42dcb)
+
+
+
 - In `Steps`, select `Add step`.
     - Type: `Spark application`
     - Name: `lab2-ex13`
@@ -328,9 +332,15 @@ AWS allows us to rent virtual servers and deploy a Spark cluster to do data anly
 
 - Paste a screenshot
 
+![image](https://github.com/user-attachments/assets/e5c24ee3-a032-4972-918e-4d21ca64c866)
+
+
 - When you submit a step, wait until the `Status` is `Completed`. 
 
 - Paste a screenshot
+
+![image](https://github.com/user-attachments/assets/1a41bbd8-f9f7-4935-94fe-43a2678b9ef5)
+
 
 > [!TIP]
 > You can find the logs in your S3 bucket: `logs/{cluster id}/containers/application_*_{run number}/container_*_000001/stdout.gz` - they might take some minutes to appear
