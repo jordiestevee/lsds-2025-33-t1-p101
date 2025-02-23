@@ -282,17 +282,28 @@ AWS allows us to rent virtual servers and deploy a Spark cluster to do data anly
 
 - Paste a screenshot
 
+![image](https://github.com/user-attachments/assets/7dd05f80-61c7-4146-bfb8-1e3ed74da57b)
+
+
 - In the bucket, create 4 folders: `input`, `app`, `logs` and `output`
 
 - Paste a screenshot
+
+![image](https://github.com/user-attachments/assets/7ab7bf32-d9c9-4f12-a1af-f3c1590543a5)
 
 - Upload the `Eurovision3.json` file inside the `input` folder
 
 - Paste a screenshot
 
+ ![image](https://github.com/user-attachments/assets/64913dd2-99b6-4daa-80f9-f2532c0d6ad9)
+
+
 - Upload `spark_tweet_user_retweets.py` and `tweet_parser.py` in the `app` folder
 
 - Paste a screenshot
+
+  ![image](https://github.com/user-attachments/assets/6d09ea35-dfad-48d9-b512-d3f8c41b74cb)
+
 
 - Open the [EMR console](https://us-east-1.console.aws.amazon.com/emr/home?region=us-east-1#/clusters)
 
