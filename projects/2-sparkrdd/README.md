@@ -347,6 +347,9 @@ AWS allows us to rent virtual servers and deploy a Spark cluster to do data anly
 
 - Paste a screenshot of the log where we can see: how much time it took, what are the ids of the ten most retweeted users.
 
+![image](https://github.com/user-attachments/assets/f8a20312-01e6-452e-b718-623d077a8e11)
+
+Note: I tried to follow your instructions of the logs part but at the time of opening the file stdout.gz in the bucket an error occurs with the file tweet_parser.py, and I haven't been able to fix it at time to deliver.
 
 # Additional exercises
 
