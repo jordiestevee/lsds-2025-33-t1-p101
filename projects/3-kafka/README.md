@@ -82,15 +82,35 @@ During this seminar session, you must create scripts that simulate the devices p
 
 **[1 mark] What is the difference between a standard topic and a compacted topic?**
 
+    A standard topic retains records based on time or size limits, potentially discarding older records.
+
+    A compacted topic retains only the latest record for each key, ensuring a compacted log that reflects the most recent state of each key.
+
 **[1 mark] What is a materialized view? Why do we use compacted topics to create materialized views?**
+
+    A materialized view is a precomputed, up-to-date representation of data derived from a stream.
+
+    We use compacted topics because they retain only the latest value for each key, making them ideal for building materialized views that reflect the current state of the data.
 
 **[1 mark] If multiple horizontally scaled consumers want to each construct a materialized view of the full topic, must they be in the same or different consumer groups?**
 
+    They must be in different consumer groups to ensure each consumer can independently read and process the full topic.
+
 **[1 mark] If multiple horizontally scaled consumers want to each construct a materialized view of the full topic, what are the benefits of having more than 1 partition?**
+
+    Having more than 1 partition allows parallel processing of the topic, improving throughput and scalability. Each partition can be processed independently by different consumers.
 
 **[1 mark] What record represents a key deletion for a Materialzied View in a Kafka topic?**
 
+    A tombstone record (a record with a key and a null value) represents a key deletion in a Kafka topic.
+
 **[3 mark] What is the benefit of a materialized view over an in-memory cache?**
+
+    Durability: Materialized views are persisted in Kafka, making them resilient to failures, unlike in-memory caches which are ephemeral.
+
+    Scalability: Materialized views can handle larger datasets by leveraging Kafka's distributed storage and processing capabilities.
+
+    Consistency: Materialized views reflect the latest state of the data stream, ensuring consistency across consumers, whereas in-memory caches may require manual synchronization.
 
 ---
 
