@@ -177,6 +177,9 @@ docker exec -it kafka-cluster-kafka-1-1 /bin/sh
 /bin/kafka-console-consumer --bootstrap-server kafka-1:9092 --topic metrics --property print.key=true
 ```
 
+![image](https://github.com/user-attachments/assets/c217cd9d-a499-4cf0-a506-12c6a0998291)
+
+
 ### [S5Q4] [5 marks] Implement the spikes source emulator
 
 Inside the [projects\3-kafka\sources](./sources/) folder, create a Python script `spikes.py`.
