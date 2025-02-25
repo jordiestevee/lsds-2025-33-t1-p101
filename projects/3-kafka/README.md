@@ -215,6 +215,7 @@ docker exec -it kafka-cluster-kafka-1-1 /bin/sh
 
 /bin/kafka-console-consumer --bootstrap-server kafka-1:9092 --topic metrics --property print.key=true
 ```
+![image](https://github.com/user-attachments/assets/81ad473f-c3f7-47ce-8db4-e9dcdd1d04f6)
 
 
 ### [S5Q5] [5 marks] Implement the stairs source emulator
