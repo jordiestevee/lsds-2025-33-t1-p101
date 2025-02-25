@@ -91,6 +91,9 @@ exit
 
 Paste a screenshot.
 
+![image](https://github.com/user-attachments/assets/959f536b-6fe4-4322-8b2a-2514961a493a)
+
+
 ---
 
 ### [S5Q3] [5 marks] Implement the constant source emulator
