@@ -68,6 +68,7 @@ During this seminar session, you must create scripts that simulate the devices p
 **[1 mark] Does each `alarms` service process only one metrics type or many?**
 
     Each alarms service can process many metrics types, depending on how it is designed and configured.
+     It can be configured 1 to 1 (One Alarm Service for One Metric Type), 1 to N (One Alarm Service for Multiple Metric Types)
 
 **[1 mark] Can two metrics of the same type end up in two different `alarms` services?**
 
