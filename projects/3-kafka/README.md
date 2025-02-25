@@ -254,8 +254,6 @@ packages-received: {"value": 510}
 ...
 ```
 
-![image](https://github.com/user-attachments/assets/719f3957-ec61-4a63-a9cd-b0a2efcd39f0)
-
 
 > [!TIP]
 > Take a look at [producer.py](./../../resources/kafka-quickstart/producer.py).
@@ -267,6 +265,9 @@ docker exec -it kafka-cluster-kafka-1-1 /bin/sh
 
 /bin/kafka-console-consumer --bootstrap-server kafka-1:9092 --topic metrics --property print.key=true
 ```
+
+![image](https://github.com/user-attachments/assets/719f3957-ec61-4a63-a9cd-b0a2efcd39f0)
+
 
 
 ## Lab 5: Building the rules service
