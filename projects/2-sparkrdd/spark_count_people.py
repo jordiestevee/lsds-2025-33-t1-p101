@@ -9,7 +9,7 @@ sc = SparkContext(conf=conf)
 people_rdd = sc.textFile(source)
 
 # Extract city from each line
-cities_rdd = people_rdd.map(lambda line: line.split()[2])  
+cities_rdd = people_rdd.map(lambda line: line.split()[2])
 
 # Count occurrences of each city
 city_counts = cities_rdd.map(lambda city: (city, 1)).reduceByKey(lambda a, b: a + b)

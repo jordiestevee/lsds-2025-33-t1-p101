@@ -282,17 +282,28 @@ AWS allows us to rent virtual servers and deploy a Spark cluster to do data anly
 
 - Paste a screenshot
 
+![image](https://github.com/user-attachments/assets/7dd05f80-61c7-4146-bfb8-1e3ed74da57b)
+
+
 - In the bucket, create 4 folders: `input`, `app`, `logs` and `output`
 
 - Paste a screenshot
+
+![image](https://github.com/user-attachments/assets/7ab7bf32-d9c9-4f12-a1af-f3c1590543a5)
 
 - Upload the `Eurovision3.json` file inside the `input` folder
 
 - Paste a screenshot
 
+ ![image](https://github.com/user-attachments/assets/64913dd2-99b6-4daa-80f9-f2532c0d6ad9)
+
+
 - Upload `spark_tweet_user_retweets.py` and `tweet_parser.py` in the `app` folder
 
 - Paste a screenshot
+
+  ![image](https://github.com/user-attachments/assets/6d09ea35-dfad-48d9-b512-d3f8c41b74cb)
+
 
 - Open the [EMR console](https://us-east-1.console.aws.amazon.com/emr/home?region=us-east-1#/clusters)
 
@@ -307,6 +318,10 @@ AWS allows us to rent virtual servers and deploy a Spark cluster to do data anly
     
 - Paste a screenshot
 
+![image](https://github.com/user-attachments/assets/31caa60c-9c7d-4262-87b3-7fa3a9f42dcb)
+
+
+
 - In `Steps`, select `Add step`.
     - Type: `Spark application`
     - Name: `lab2-ex13`
@@ -317,15 +332,24 @@ AWS allows us to rent virtual servers and deploy a Spark cluster to do data anly
 
 - Paste a screenshot
 
+![image](https://github.com/user-attachments/assets/e5c24ee3-a032-4972-918e-4d21ca64c866)
+
+
 - When you submit a step, wait until the `Status` is `Completed`. 
 
 - Paste a screenshot
+
+![image](https://github.com/user-attachments/assets/1a41bbd8-f9f7-4935-94fe-43a2678b9ef5)
+
 
 > [!TIP]
 > You can find the logs in your S3 bucket: `logs/{cluster id}/containers/application_*_{run number}/container_*_000001/stdout.gz` - they might take some minutes to appear
 
 - Paste a screenshot of the log where we can see: how much time it took, what are the ids of the ten most retweeted users.
 
+![image](https://github.com/user-attachments/assets/f8a20312-01e6-452e-b718-623d077a8e11)
+
+Note: I tried to follow your instructions of the logs part but at the time of opening the file stdout.gz in the bucket an error occurs with the file tweet_parser.py, and I haven't been able to fix it at time to deliver.
 
 # Additional exercises
 

@@ -2,6 +2,7 @@ import json
 from collections import defaultdict
 from tweet_parser import parse_tweet, Tweet
 
+
 def count_tweets_by_language(file_path: str):
     language_count = defaultdict(int)
 
@@ -18,6 +19,7 @@ def count_tweets_by_language(file_path: str):
                 continue  # Skip invalid JSON or missing fields
 
     return dict(language_count)
+
 
 if __name__ == "__main__":
     file_path = "data/Eurovision3.json"

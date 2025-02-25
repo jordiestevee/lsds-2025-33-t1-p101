@@ -37,17 +37,41 @@ During this seminar session, you must create scripts that simulate the devices p
 
 **[1 mark] What is a log? What is a topic? What is a partition?**
 
+    A log is an ordered, immutable sequence of records stored in a Kafka partition.
+
+    A topic is a category or feed name to which records are published.
+
+    A partition is a subset of a topic, allowing Kafka to parallelize and scale data storage and processing.
+
 **[1 mark] What does the broker do? What is a producer? And a consumer?**
+
+    A broker is a Kafka server that stores data and handles read/write requests.
+
+    A producer is an application that publishes (writes) data to Kafka topics.
+
+    A consumer is an application that subscribes to (reads) data from Kafka topics.
 
 **[1 mark] What is a consumer group? What is a commit?**
 
+    A consumer group is a set of consumers that work together to consume data from a topic, with each partition being consumed by only one consumer in the group.
+
+    A commit is the process of saving the current offset (position) of a consumer in a partition, ensuring it can resume from where it left off.
+
 **[1 mark] Is ordering guaranteed in Kafka?**
+
+    Yes, ordering is guaranteed within a partition, but not across partitions in a topic.
 
 **[1 mark] What is the upper boundary when horizontally scaling Kafka consumers for a single topic?**
 
+    The upper boundary is the number of partitions in the topic, as each partition can be consumed by only one consumer in a group.
+
 **[1 mark] Does each `alarms` service process only one metrics type or many?**
 
+    Each alarms service can process many metrics types, depending on how it is designed and configured.
+
 **[1 mark] Can two metrics of the same type end up in two different `alarms` services?**
+
+    Yes, if the metrics are distributed across different partitions and consumed by different consumers in a consumer group, they can end up in different alarms services.
 
 ---
 
@@ -58,15 +82,35 @@ During this seminar session, you must create scripts that simulate the devices p
 
 **[1 mark] What is the difference between a standard topic and a compacted topic?**
 
+    A standard topic retains records based on time or size limits, potentially discarding older records.
+
+    A compacted topic retains only the latest record for each key, ensuring a compacted log that reflects the most recent state of each key.
+
 **[1 mark] What is a materialized view? Why do we use compacted topics to create materialized views?**
+
+    A materialized view is a precomputed, up-to-date representation of data derived from a stream.
+
+    We use compacted topics because they retain only the latest value for each key, making them ideal for building materialized views that reflect the current state of the data.
 
 **[1 mark] If multiple horizontally scaled consumers want to each construct a materialized view of the full topic, must they be in the same or different consumer groups?**
 
+    They must be in different consumer groups to ensure each consumer can independently read and process the full topic.
+
 **[1 mark] If multiple horizontally scaled consumers want to each construct a materialized view of the full topic, what are the benefits of having more than 1 partition?**
+
+    Having more than 1 partition allows parallel processing of the topic, improving throughput and scalability. Each partition can be processed independently by different consumers.
 
 **[1 mark] What record represents a key deletion for a Materialzied View in a Kafka topic?**
 
+    A tombstone record (a record with a key and a null value) represents a key deletion in a Kafka topic.
+
 **[3 mark] What is the benefit of a materialized view over an in-memory cache?**
+
+    Durability: Materialized views are persisted in Kafka, making them resilient to failures, unlike in-memory caches which are ephemeral.
+
+    Scalability: Materialized views can handle larger datasets by leveraging Kafka's distributed storage and processing capabilities.
+
+    Consistency: Materialized views reflect the latest state of the data stream, ensuring consistency across consumers, whereas in-memory caches may require manual synchronization.
 
 ---
 
@@ -90,6 +134,9 @@ exit
 ```
 
 Paste a screenshot.
+
+![image](https://github.com/user-attachments/assets/959f536b-6fe4-4322-8b2a-2514961a493a)
+
 
 ---
 
@@ -168,6 +215,7 @@ docker exec -it kafka-cluster-kafka-1-1 /bin/sh
 
 /bin/kafka-console-consumer --bootstrap-server kafka-1:9092 --topic metrics --property print.key=true
 ```
+![image](https://github.com/user-attachments/assets/81ad473f-c3f7-47ce-8db4-e9dcdd1d04f6)
 
 
 ### [S5Q5] [5 marks] Implement the stairs source emulator
@@ -205,6 +253,9 @@ packages-received: {"value": 505}
 packages-received: {"value": 510}
 ...
 ```
+
+![image](https://github.com/user-attachments/assets/719f3957-ec61-4a63-a9cd-b0a2efcd39f0)
+
 
 > [!TIP]
 > Take a look at [producer.py](./../../resources/kafka-quickstart/producer.py).
