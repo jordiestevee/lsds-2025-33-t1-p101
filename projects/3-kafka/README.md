@@ -37,17 +37,41 @@ During this seminar session, you must create scripts that simulate the devices p
 
 **[1 mark] What is a log? What is a topic? What is a partition?**
 
+    A log is an ordered, immutable sequence of records stored in a Kafka partition.
+
+    A topic is a category or feed name to which records are published.
+
+    A partition is a subset of a topic, allowing Kafka to parallelize and scale data storage and processing.
+
 **[1 mark] What does the broker do? What is a producer? And a consumer?**
+
+    A broker is a Kafka server that stores data and handles read/write requests.
+
+    A producer is an application that publishes (writes) data to Kafka topics.
+
+    A consumer is an application that subscribes to (reads) data from Kafka topics.
 
 **[1 mark] What is a consumer group? What is a commit?**
 
+    A consumer group is a set of consumers that work together to consume data from a topic, with each partition being consumed by only one consumer in the group.
+
+    A commit is the process of saving the current offset (position) of a consumer in a partition, ensuring it can resume from where it left off.
+
 **[1 mark] Is ordering guaranteed in Kafka?**
+
+    Yes, ordering is guaranteed within a partition, but not across partitions in a topic.
 
 **[1 mark] What is the upper boundary when horizontally scaling Kafka consumers for a single topic?**
 
+    The upper boundary is the number of partitions in the topic, as each partition can be consumed by only one consumer in a group.
+
 **[1 mark] Does each `alarms` service process only one metrics type or many?**
 
+    Each alarms service can process many metrics types, depending on how it is designed and configured.
+
 **[1 mark] Can two metrics of the same type end up in two different `alarms` services?**
+
+    Yes, if the metrics are distributed across different partitions and consumed by different consumers in a consumer group, they can end up in different alarms services.
 
 ---
 
