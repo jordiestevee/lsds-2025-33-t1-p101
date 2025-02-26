@@ -35,6 +35,12 @@ def create_rule(rule_in: RuleIn):
     producer.flush()
     return rule_dict
 
+@app.delete("/rules/{rule_id}")
+def delete_rule(rule_id: str):
+    producer.produce(topic="rules", key=rule_id, value=None)
+    producer.flush()
+    return {"id": rule_id, "deleted": True}
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
