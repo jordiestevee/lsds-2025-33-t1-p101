@@ -333,6 +333,8 @@ docker exec -it kafka-cluster-kafka-1-1 /bin/sh
 
 /bin/kafka-console-consumer --bootstrap-server kafka-1:9092 --topic rules --property print.key=true
 ```
+![image](https://github.com/user-attachments/assets/0020a6de-9c98-427a-8de0-7cd6d2f68752)
+
 
 ### [L5Q2] [5 marks] Dockerizing the rules service
 
