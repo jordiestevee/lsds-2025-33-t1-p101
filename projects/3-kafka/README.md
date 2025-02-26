@@ -309,6 +309,11 @@ docker exec -it kafka-cluster-kafka-1-1 /bin/sh
 
 /bin/kafka-console-consumer --bootstrap-server kafka-1:9092 --topic rules --property print.key=true
 ```
+![image](https://github.com/user-attachments/assets/1f7ee047-5146-49c1-aaf3-5c0b19503ee0)
+
+![image](https://github.com/user-attachments/assets/10b3139c-6732-49ba-b824-7b10747919ce)
+
+
 
 
 ---
