@@ -1,7 +1,4 @@
 fastapi
 uvicorn
-kafka-python
-confluent-kafka==2.5.0
+confluent-kafka
 pydantic
-fastapi[standard]
-
