@@ -363,6 +363,8 @@ Verify and paste a screenshot of how when you POST and DELETE rules with `curl`,
 docker exec -it lsds-kafka-lab-kafka-1-1 /bin/sh
 /bin/kafka-console-consumer --bootstrap-server kafka-1:9092 --topic rules --property print.key=true
 ```
+![image](https://github.com/user-attachments/assets/68f44ea6-fc73-4733-afbb-3e0868c679df)
+![image](https://github.com/user-attachments/assets/c5a87490-d180-47b6-a069-a465c1d6a8df)
 
 ---
 
