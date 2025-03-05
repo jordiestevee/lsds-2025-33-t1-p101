@@ -1,6 +1,7 @@
 from confluent_kafka import Consumer, KafkaError
 import requests
 import threading
+import time
 
 rules_view = {}
 
@@ -8,6 +9,8 @@ rules_view = {}
 discord_webhook_url = 'https://discord.com/api/webhooks/1346824318666936351/U-quGFO3NXPyhL_psKmDEyu20NQf1s7dsYhnqw_x2iaIWGfhvPIn7Fkoe2X02u5LQ7pj'
 
 # Function to consume rules and update the materialized view
+import json
+
 def consume_rules():
     consumer = Consumer({
         'bootstrap.servers': 'kafka-1:9092',
@@ -28,8 +31,8 @@ def consume_rules():
                 break
 
         rule_id = msg.key().decode('utf-8')
-        rule_value = msg.value().decode('utf-8')
-        rules_view[rule_id] = rule_value
+        rule_value = json.loads(msg.value().decode('utf-8'))  
+        rules_view[rule_id] = rule_value 
         print(f"Updated rule: {rule_id} -> {rule_value}")
 
 # Function to consume metrics and check for triggered rules
@@ -92,12 +95,12 @@ def evaluate_rule(rule_condition, metric_value):
 def send_alarm(rule_id, metric_value):
     message = f"Rule {rule_id} triggered! Metric: {metric_value}"
     payload = {'content': message}
-    requests.post(discord_webhook_url, json=payload)
-    print(f"Sent alarm: {message}")
+    response = requests.post(discord_webhook_url, json=payload)
+    print(f"Sent alarm: {message}, Discord response: {response.status_code}, {response.text}")
 
 threading.Thread(target=consume_rules, daemon=True).start()
 
 threading.Thread(target=consume_metrics, daemon=True).start()
 
 while True:
-    pass
+    time.sleep(1) 
