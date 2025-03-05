@@ -417,11 +417,13 @@ Create different rules with the rules API and start producing metrics with the [
 
 **[3 mark] Paste screenshots of how you receive the alarms in Discord.**
 
+![image](https://github.com/user-attachments/assets/0a7c3286-0be8-4e7b-9a54-c8bfeefc31fc)
+
 **[1 mark] How are `metrics` distributed between alarm containers?**
+Kafka distributes metrics among alarm service instances using consumer groups. If the metrics topic has multiple partitions, Kafka assigns partitions to different consumers, allowing messages to be processed in parallel.
 
 **[1 mark] What happens if you suddenly stop one of alarm service instances?**
-
-
+If one alarm service instance suddenly stops, Kafka rebalances the consumer group, reassigning partitions to the remaining active instances. If no other instances exist, metric processing halts until a new consumer joins.
 
 ---
 
