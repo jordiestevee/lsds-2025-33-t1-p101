@@ -32,7 +32,16 @@ services:
       BROKER: kafka-1:9092
     depends_on:
       - kafka-1
-
+  alarms:
+    build: ./alarms
+    deploy:
+      replicas: 3
+    depends_on:
+      - kafka-1
+    networks:
+      - kafka-cluster-network
+    environment:
+      BROKER: kafka-1:9092
 networks:
   kafka-cluster-network:
     driver: bridge
