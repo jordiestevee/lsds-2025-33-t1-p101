@@ -417,7 +417,8 @@ Create different rules with the rules API and start producing metrics with the [
 
 **[3 mark] Paste screenshots of how you receive the alarms in Discord.**
 
-![image](https://github.com/user-attachments/assets/0a7c3286-0be8-4e7b-9a54-c8bfeefc31fc)
+![image](https://github.com/user-attachments/assets/c8c1f82b-fb9a-4631-aff3-328c14e6f665)
+
 
 **[1 mark] How are `metrics` distributed between alarm containers?**
 
