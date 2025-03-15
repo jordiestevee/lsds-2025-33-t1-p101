@@ -4,10 +4,12 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from confluent_kafka import Producer
 
+
 class RuleIn(BaseModel):
     metric_name: str
     operator: str
     threshold: float
+
 
 class RuleOut(BaseModel):
     id: str
@@ -15,13 +17,14 @@ class RuleOut(BaseModel):
     operator: str
     threshold: float
 
+
 app = FastAPI()
 
-producer_config = {
-    'bootstrap.servers': 'kafka-1:9092' }
+producer_config = {"bootstrap.servers": "kafka-1:9092"}
 producer = Producer(producer_config)
 
 rules_store = {}
+
 
 @app.post("/rules", response_model=RuleOut)
 def create_rule(rule_in: RuleIn):
@@ -37,6 +40,7 @@ def create_rule(rule_in: RuleIn):
     producer.flush()
     return rule_dict
 
+
 @app.delete("/rules/{rule_id}")
 def delete_rule(rule_id: str):
     if rule_id in rules_store:
@@ -45,9 +49,11 @@ def delete_rule(rule_id: str):
     producer.flush()
     return {"id": rule_id, "deleted": True}
 
+
 @app.get("/rules", response_model=list[RuleOut])
 def list_rules():
     return list(rules_store.values())
+
 
 @app.get("/health")
 def health():
