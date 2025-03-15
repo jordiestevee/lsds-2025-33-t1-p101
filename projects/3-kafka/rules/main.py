@@ -18,8 +18,7 @@ class RuleOut(BaseModel):
 app = FastAPI()
 
 producer_config = {
-    'bootstrap.servers': 'kafka-1:9092' 
-}
+    'bootstrap.servers': 'kafka-1:9092' }
 producer = Producer(producer_config)
 
 rules_store = {}

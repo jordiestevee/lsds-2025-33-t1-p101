@@ -91,7 +91,7 @@ def evaluate_rule(rule_condition, metric_value):
         print(f"Error evaluating rule: {e}")
         return False
 
-# Function to send alarms to Discord
+# Sending alarms to discord (function)
 def send_alarm(rule_id, metric_value):
     message = f"Rule {rule_id} triggered! Metric: {metric_value}"
     payload = {'content': message}
